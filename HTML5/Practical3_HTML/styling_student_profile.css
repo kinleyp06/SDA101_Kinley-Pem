@@ -1,0 +1,33 @@
+.my-profile{
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffacac;
+  border-radius: 8px;
+}
+
+
+.navbar ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(2, 3, 63);
+  overflow: hidden;
+  display: flex;
+}
+
+.navbar li {
+  float:left
+}
+
+.navbar a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: rgb(124, 146, 186);
+}
