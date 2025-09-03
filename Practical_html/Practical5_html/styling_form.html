@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling form</title>
+    <link rel="stylesheet" href="Form-style.css">
+</head>
+<body>
+    <!-- HOSTEL ROOM MAINTAINANCE FORM --> 
+<form action="/submit-form" method="post">    
+     <h2>Hostel Room Maintainance Form</h2>
+    
+    <!--BASIC STUDENT INFORMATION SECTION --> 
+    <h4>Student Information</h4>
+<label for="name">Full Name:</label>
+<input 
+    type="text" 
+    id="name" 
+    name="name" 
+    required minlength="2" 
+    maxlength="50"  
+    placeholder="Enter your full name"><br><br>
+    
+    <label for="Student-ID">Student ID:</label>
+    <input 
+        type="text" 
+        id="student ID" 
+        name="Student ID" 
+        required length="8" 
+        placeholder="02250123"><br><br>
+
+    <label for="Email-Address:">Email Address:</Address></label><br> 
+    <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        placeholder="student.cst@rub.edu.bt"><br><br>
+        
+    <lablel for="Phone-Number:">Phone Number:</lablel><br>
+    <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        required  
+        placeholder="12345678"><br><br>
+
+        <!-- ROOM INFORMATION SECTION  --> 
+    <h4>Room Information</h4>
+    <label for="Block-name:">Block/Building Name:</label>
+    <select id="block" name="block" required>
+        <option value="">Select Block</option>
+        <option value="A">Block A</option>
+        <option value="B">Block B</option>
+        <option value="C">Block C</option>
+        <option value="F">Block F</option>
+        <option value="RK">RK Building</option>
+    </select><br><br>
+
+    <label for="Room-Number:">Room Number:</label>
+    <input 
+        type="number" 
+        id="room-number" 
+        name="room-number" 
+        required 
+        placeholder="Room Number (e.g.,208)"<br><br><br>
+    
+    <label for Floor Number:">Floor Number:</label>
+    <input
+        type="number" 
+        id="floor-number" 
+        name="floor-number" 
+        required="1-10"
+        placeholder="Floor Number (e.g.,2)"><br><br>
+
+    <h4>ISSUE DETAILS SECTION</h4>
+    <label for="Issue-Type:">Issue Type:</label>
+    <select id="issue-type" name="issue-type" required>
+        <option value="">Select Issue Type</option>
+        <option value="Plumbing">Plumbing</option>
+        <option value="Electrical">Electrical</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Cleaning">Cleaning</option>
+        <option value="Other">Other</option> 
+    </select><br><br>
+    
+    <label for="Issue-priority/urgency:">Issue Priority/Urgency:</label><br>
+    <input 
+        type="radio" 
+        id="low" 
+        name="priority" 
+        value="Low" 
+        required>
+    <label for="low">Low (Within a week)</label><br>
+    <input 
+        type="radio" 
+        id="medium" 
+        name="priority" 
+        value="Medium"
+        required>
+    <label for="medium">Medium (Within 3 days)</label><br>
+    <input 
+        type="radio" 
+        id="high" 
+        name="priority" 
+        value="High"
+        required>
+    <label for="high">High (Within 24 hours)</label><br>
+    <input 
+        type="radio" 
+        id="emergency" 
+        name="priority" 
+        value="emergency"
+        required>
+
+    <label for="Emergency">Emergency (Immediate attention required)</label><br><br>
+    <label for="Issue-Description:">Issue Description:</label><br>
+    <textarea   
+        id="issue-description" 
+        name="issue-description" 
+         
+        placeholder="Please describe the issue in detail..." 
+        required="20-500"></textarea><br><br>
+    
+        <input type="submit" value="Submit">
+
+</body>
+</html>
