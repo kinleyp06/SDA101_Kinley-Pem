@@ -1,0 +1,236 @@
+/* basic styling*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fafafa;
+}
+
+/* Navigation Bar with Flexbox */
+.navbar {
+    display: flex; /* Make flex container */
+    justify-content: space-between; /* Spread items */
+    align-items: center; /* Center vertically */
+    background: #1B6B28;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex; /* Flex container */
+    list-style: none; /* Remove bullets */
+    gap: 2rem; /* Space between menu items */
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #1D490F;
+}
+
+.nav-social {
+    display: flex; /* Flex container */
+    gap: 1.5rem; /* Space between social links */
+}
+
+.nav-social a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-social a:hover {
+    color: #4CAF50;
+}
+
+/* Main Layout with Grid */
+.page-container {
+    display: grid; /* Grid container */
+    grid-template-columns: 1fr; /* Single column by default */
+    grid-template-rows: auto;
+    grid-template-areas:
+        "hero"
+        "about"
+        "skills"
+        "portfolio";
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 3rem;
+}
+
+/* Assign grid areas */
+.hero {
+    grid-area: hero;
+    text-align: center;
+}
+
+.about {
+    grid-area: about;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.portfolio {
+    grid-area: portfolio;
+}
+
+/* Skills Cards with Flexbox */
+.skills-container {
+    display: flex; /* Flex container */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 2rem; /* Space between cards */
+    justify-content: center;
+}
+
+.skill-card {
+    background: #d6e3df;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 280px; /* Grow, shrink, basis */
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.737);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Portfolio Gallery with Grid */
+.gallery {
+    display: grid; /* Grid container */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Gaps between projects */
+}
+
+.project {
+    background: #caded7;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.project:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.project img {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Hero Section Styling */
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #6B1B5E;
+    
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.cta-button {
+    background-color: #6B1B5E;
+    color: white;
+    border:none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+/* Section Headings */
+h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Navbar stacked vertically */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu li a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .nav-social {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    /* Skills cards stacked */
+    .skills-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Portfolio gallery single column */
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce padding on page container */
+    .page-container {
+        padding: 1rem;
+        gap: 2rem;
+    }
+}
