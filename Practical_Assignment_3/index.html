@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Community - Transforming Lives, Restoring Hope</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #298c93;
+            --primary-dark: #1f6a70;
+            --primary-light: #3aa8b0;
+            --accent: #f8c291;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background-light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJLkz-5DIRlmK1Yx7MfdGh4GA-OOkmwE3j9Q&s');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .quote-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://i.swncdn.com/media/912w/cms/CW/faith/40433-cross-nature-ThinkstockPhotos-657091114.1200w.tn.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .volunteer-bg {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), 
+                        url('https://img.freepik.com/free-photo/people-reading-together-side-view_23-2150059048.jpg?semt=ais_hybrid&w=740&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .podcast-bg {
+            background: linear-gradient(rgba(45, 55, 72, 0.85), rgba(45, 55, 72, 0.85)), 
+                        url('https://www.shutterstock.com/image-photo/christian-radio-broadcast-podcast-studio-600nw-2199482727.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .gradient-border-top {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        
+        .section-title-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .center-title-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .btn-hover:hover i {
+            transform: translateX(4px);
+        }
+        
+        /* Shape styles */
+        .shape-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+        }
+        
+        .shape-triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 86px solid rgba(255, 255, 255, 0.1);
+            position: absolute;
+        }
+        
+        .shape-square {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+        }
+        
+        .shape-hexagon {
+            width: 80px;
+            height: 46px;
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+        }
+        
+        .shape-hexagon:before,
+        .shape-hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+        }
+        
+        .shape-hexagon:before {
+            bottom: 100%;
+            border-bottom: 23px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shape-hexagon:after {
+            top: 100%;
+            border-top: 23px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shape-diamond {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            position: absolute;
+        }
+        
+        .shape-circle-small {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+        }
+        
+        .shape-triangle-small {
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 52px solid rgba(255, 255, 255, 0.1);
+            position: absolute;
+        }
+        
+        .shape-square-small {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+        }
+        
+        .shape-hexagon-small {
+            width: 50px;
+            height: 29px;
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+        }
+        
+        .shape-hexagon-small:before,
+        .shape-hexagon-small:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+        }
+        
+        .shape-hexagon-small:before {
+            bottom: 100%;
+            border-bottom: 14.5px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shape-hexagon-small:after {
+            top: 100%;
+            border-top: 14.5px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .shape-diamond-small {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            position: absolute;
+        }
+        
+        /* Shape positions based on the reference image */
+        .hero-shape-1 {
+            top: 15%;
+            left: 10%;
+        }
+        
+        .hero-shape-2 {
+            top: 20%;
+            right: 15%;
+        }
+        
+        .hero-shape-3 {
+            bottom: 20%;
+            left: 15%;
+        }
+        
+        .hero-shape-4 {
+            bottom: 15%;
+            right: 10%;
+        }
+        
+        .hero-shape-5 {
+            top: 40%;
+            left: 25%;
+        }
+        
+        .mission-shape-1 {
+            top: 10%;
+            right: 10%;
+        }
+        
+        .mission-shape-2 {
+            bottom: 10%;
+            left: 10%;
+        }
+        
+        .ministries-shape-1 {
+            top: 10%;
+            left: 5%;
+        }
+        
+        .ministries-shape-2 {
+            bottom: 10%;
+            right: 5%;
+        }
+        
+        .experience-shape-1 {
+            top: 20%;
+            right: 20%;
+        }
+        
+        .experience-shape-2 {
+            bottom: 20%;
+            left: 20%;
+        }
+        
+        .small-groups-shape-1 {
+            top: 10%;
+            right: 10%;
+        }
+        
+        .small-groups-shape-2 {
+            bottom: 10%;
+            left: 10%;
+        }
+        
+        .quote-shape-1 {
+            top: 10%;
+            left: 10%;
+        }
+        
+        .quote-shape-2 {
+            bottom: 10%;
+            right: 10%;
+        }
+        
+        .quote-shape-3 {
+            top: 50%;
+            left: 30%;
+        }
+        
+        .welcome-shape-1 {
+            top: 10%;
+            right: 10%;
+        }
+        
+        .welcome-shape-2 {
+            bottom: 10%;
+            left: 10%;
+        }
+        
+        .volunteer-shape-1 {
+            top: 10%;
+            left: 10%;
+        }
+        
+        .volunteer-shape-2 {
+            bottom: 10%;
+            right: 10%;
+        }
+        
+        .contact-shape-1 {
+            top: 20%;
+            left: 20%;
+        }
+        
+        .contact-shape-2 {
+            bottom: 20%;
+            right: 20%;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header/Hero Section -->
+    <header class="hero-bg min-h-screen flex items-center justify-center text-white py-20 px-4 relative overflow-hidden">
+        <!-- Design shapes -->
+        <div class="shape-circle hero-shape-1"></div>
+        <div class="shape-triangle hero-shape-2"></div>
+        <div class="shape-square hero-shape-3"></div>
+        <div class="shape-hexagon hero-shape-4"></div>
+        <div class="shape-diamond hero-shape-5"></div>
+        
+        <div class="text-center max-w-4xl z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+                TRANSFORMING LIVES
+            </h1>
+            <div class="text-3xl md:text-5xl font-light mb-8">
+                ( RESTORING HOPE )
+            </div>
+            <p class="text-xl md:text-2xl italic mb-12 font-light tracking-wide">
+                eprehenderit in voluptate
+            </p>
+            <button class="bg-white text-gray-800 hover:bg-gray-100 font-semibold py-3 px-8 rounded-md transition duration-300 transform hover:-translate-y-1">
+                READ MORE
+            </button>
+        </div>
+    </header>
+
+    <!-- Mission Banner -->
+    <section class="bg-white py-16 px-4 relative">
+        <!-- Shapes -->
+        <div class="shape-circle-small mission-shape-1 opacity-20"></div>
+        <div class="shape-square-small mission-shape-2 opacity-20"></div>
+        
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
+                We are Taking Small Steps to<br>Make Earth Better Planet
+            </h2>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section class="py-16 bg-gray-50 px-4 relative">
+        <!-- Shapes -->
+        <div class="shape-triangle-small ministries-shape-1 opacity-20"></div>
+        <div class="shape-hexagon-small ministries-shape-2 opacity-20"></div>
+        
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Ministry 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative border-t-4 border-teal-500">
+                <div class="gradient-border-top absolute top-0 left-0 right-0 h-1"></div>
+                <div class="h-48 bg-cover bg-center" 
+                     style="background-image: url('https://img.freepik.com/free-photo/kids-being-part-sunday-school_23-2149582878.jpg?semt=ais_hybrid&w=740&q=80')"></div>
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-teal-600 mb-3 border-2 border-teal-500 rounded px-4 py-2 inline-block">PLACE OF HEAVEN</h3>
+                    <p class="text-gray-600 mb-4">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+                    <button class="text-teal-600 font-semibold flex items-center justify-center hover:text-teal-800 transition duration-300 btn-hover">
+                        LEARN MORE <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Ministry 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative border-t-4 border-teal-500">
+                <div class="gradient-border-top absolute top-0 left-0 right-0 h-1"></div>
+                <div class="h-48 bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80')"></div>
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-teal-600 mb-3 border-2 border-teal-500 rounded px-4 py-2 inline-block">STUDY BIBLE</h3>
+                    <p class="text-gray-600 mb-4">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+                    <button class="text-teal-600 font-semibold flex items-center justify-center hover:text-teal-800 transition duration-300 btn-hover">
+                        LEARN MORE <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Ministry 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative border-t-4 border-teal-500">
+                <div class="gradient-border-top absolute top-0 left-0 right-0 h-1"></div>
+                <div class="h-48 bg-cover bg-center" 
+                     style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58LObtYO1U7nEq7PGSdlP1dQLa1iH4-6VBg&s')"></div>
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-bold text-teal-600 mb-3 border-2 border-teal-500 rounded px-4 py-2 inline-block">CHILDREN'S MINISTRY</h3>
+                    <p class="text-gray-600 mb-4">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+                    <button class="text-teal-600 font-semibold flex items-center justify-center hover:text-teal-800 transition duration-300 btn-hover">
+                        LEARN MORE <i class="fas fa-arrow-right ml-2 transition-transform duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-16 bg-white px-4 relative">
+        <!-- Shapes -->
+        <div class="shape-circle experience-shape-1 opacity-20"></div>
+        <div class="shape-diamond experience-shape-2 opacity-20"></div>
+        
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-600 mb-6 relative section-title-underline">
+                    Experience<br>Love. Grace. God.
+                </h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Quis viverra nibh cras pulvinar mattis nunc sed. Lacus sed turpis tincidunt id aliquet risus feugiat in. Auctor augue mauris augue neque gravida in fermentum et. Feugiat in fermentum possesse urna.
+                </p>
+                <button class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-md transition duration-300">
+                    LEARN MORE
+                </button>
+            </div>
+            <div class="h-80 rounded-xl shadow-lg bg-cover bg-center" 
+                 style="background-image: url('https://img.freepik.com/free-photo/religious-ideas-praying-god_1150-14897.jpg?semt=ais_hybrid&w=740&q=80')"></div>
+        </div>
+    </section>
+
+    <!-- Small Groups Section -->
+    <section class="py-16 bg-gray-50 px-4 relative">
+        <!-- Shapes -->
+        <div class="shape-hexagon-small small-groups-shape-1 opacity-20"></div>
+        <div class="shape-square-small small-groups-shape-2 opacity-20"></div>
+        
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <div class="h-80 rounded-xl shadow-lg bg-cover bg-center" 
+                     style="background-image: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-600 mb-6 relative section-title-underline">
+                    Weekly meetings<br>of 8-10 people to<br>connect in a<br>biblical<br>community.
+                </h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed faucibus turpis in eu mi bibendum neque. Arcu dictum varius duis at consectetur lorem donee massa. Tempus imperdiet nulla malesuada pellentesque.
+                </p>
+                <button class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-md transition duration-300">
+                    LEARN MORE
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-bg py-20 px-4 text-white text-center relative overflow-hidden">
+        <!-- Shapes -->
+        <div class="shape-circle quote-shape-1"></div>
+        <div class="shape-triangle quote-shape-2"></div>
+        <div class="shape-diamond quote-shape-3"></div>
+        
+        <div class="max-w-4xl mx-auto z-10">
+            <blockquote class="text-2xl md:text-3xl italic mb-8 leading-relaxed">
+                "Pray! And listen to God! You can do this alone, but find somebody to do it with you"
+            </blockquote>
+            <button class="bg-white text-teal-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-md transition duration-300">
+                CONTACT US
+            </button>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="py-16 bg-white px-4 relative">
+        <!-- Shapes -->
+        <div class="shape-circle-small welcome-shape-1 opacity-20"></div>
+        <div class="shape-triangle-small welcome-shape-2 opacity-20"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-teal-600 relative inline-block center-title-underline">
+                    Welcome!
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Elti ut aliquam purus sit amet luctus venenatis. Ridiculus mus mauris vitae ultricies leo integer malesuada. Massa enim nec dui nunc mattis enim. Sagittis vitae et leo duis ut. Lacus suspendisse faucibus interdum.
+                    </p>
+                    <button class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-md transition duration-300">
+                        LEARN MORE
+                    </button>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="h-40 rounded-lg shadow-lg bg-cover bg-center" 
+                         style="background-image: url('https://img.freepik.com/free-photo/medium-shot-people-praying-together_23-2150755513.jpg?semt=ais_hybrid&w=740&q=80')"></div>
+                    <div class="h-40 rounded-lg shadow-lg bg-cover bg-center" 
+                         style="background-image: url('https://img.freepik.com/premium-photo/grateful-man-worships-countryside_875825-12969.jpg?semt=ais_hybrid&w=740&q=80')"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer & Podcast Section -->
+    <section class="py-16 bg-gray-100 px-4 relative">
+        <!-- Shapes -->
+        <div class="shape-hexagon-small volunteer-shape-1 opacity-20"></div>
+        <div class="shape-square-small volunteer-shape-2 opacity-20"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-lg font-semibold text-teal-600 tracking-widest uppercase">EXPANDING YOUR REACH</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="volunteer-bg text-white p-8 rounded-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Become A Volunteer</h2>
+                    <p class="mb-6 leading-relaxed">
+                        Un erim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <button class="bg-white text-teal-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-md transition duration-300">
+                        READ MORE
+                    </button>
+                </div>
+                <div class="podcast-bg text-white p-8 rounded-lg">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Weekly Podcasts</h2>
+                    <p class="mb-6 leading-relaxed">
+                        Enter your email to subscribe to our weekly podcasts and stay updated with our community.
+                    </p>
+                    <div class="flex mt-4">
+                        <input type="email" placeholder="Enter a valid email address" class="flex-1 px-4 py-3 rounded-l-md text-gray-800 focus:outline-none">
+                        <button class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-r-md transition duration-300">
+                            SUBMIT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white px-4 relative">
+        <!-- Shapes -->
+        <div class="shape-circle-small contact-shape-1 opacity-20"></div>
+        <div class="shape-diamond-small contact-shape-2 opacity-20"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-teal-600 text-center mb-12 relative center-title-underline">
+                Contact Us
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <input type="text" placeholder="Enter your Name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                        <input type="email" placeholder="Enter a valid email address" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                        <textarea placeholder="Enter your message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                        <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-md transition duration-300">
+                            SUBMIT
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <div class="h-64 rounded-lg shadow-lg mb-6 bg-cover bg-center" 
+                         style="background-image: url('https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-teal-600 mb-2">CALL US</h3>
+                            <p class="text-gray-600">1 (234) 567-891, 1 (239) 987-654</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-teal-600 mb-2">LOCATION</h3>
+                            <p class="text-gray-600">121 Book Street, 21 Avenue, New York, NY 03109-9000</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-teal-600 mb-2">WORKING HOURS</h3>
+                        <p class="text-gray-600">Mon - Fri .... 11 am – 8 pm, Sat, Sun .... 6 am – 6 pm</p>
+                    </div>
+                    <p class="text-gray-500 text-sm italic">
+                        Sample text: Click to select the text box. Click again or double click to start editing the text.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-bg-r from-teal-600 to-teal-700 text-white py-8 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&copy; 2023 Church Community. All rights reserved.</p>
+        </div>
+    </footer>
+</body>  
+</html>
