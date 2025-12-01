@@ -1,9 +1,12 @@
-Exercise 1 - Exploring DOM
-You will build a simple interactive web page that demonstrates DOM access, traversal, and manipulation
+# Exercise 1 - Exploring DOM
 
-Part 1: Basic Structure
-Create an index.html file and add the following structure:
+## Objective
+You will build a simple interactive web page that demonstrates DOM access, traversal, and manipulation.
 
+## Part 1: Basic Structure
+Create an `index.html` file and add the following structure:
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,21 +34,33 @@ Create an index.html file and add the following structure:
   <script src="script.js"></script>
 </body>
 </html>
-Part 2: Write JavaScript (in script.js)
+```
+
+## Part 2: Write JavaScript (in `script.js`)
 Practice these concepts step by step:
 
-Selecting Elements
+### 1. Selecting Elements
+```javascript
 const title = document.getElementById("main-title");
 const paragraphs = document.getElementsByClassName("content");
 const container = document.getElementById("container");
-Traversing the DOM
+```
+
+### 2. Traversing the DOM
+```javascript
 console.log(container.parentElement);      // parent of container
 console.log(container.children);           // all children
 console.log(container.firstElementChild);  // first child element
-Manipulating the content
+```
+
+### 3. Manipulating the content
+```javascript
 title.textContent = "Welcome to the DOM Practice!";
 paragraphs[0].style.color = "green";
-Adding Event Listeners
+```
+
+### 4. Adding Event Listeners
+```javascript
 document.getElementById("changeTextBtn").addEventListener("click", () => {
   title.textContent = "Text Changed via Button Click!";
 });
@@ -63,7 +78,8 @@ document.getElementById("removeElementBtn").addEventListener("click", () => {
     container.removeChild(lastChild);
   }
 });
-Optional Challenge:
-Add a new button:
+```
 
-When clicked, it toggles a class (highlight) on all <p> elements to change their color.
+## Optional Challenge:
+Add a new button:
+- When clicked, it toggles a class (`highlight`) on all `<p>` elements to change their color.

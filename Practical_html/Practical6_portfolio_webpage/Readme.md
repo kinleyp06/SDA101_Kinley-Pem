@@ -1,19 +1,20 @@
+# Portfolio Webpage: Using Flexbox for Components + Grid for Layout
 
-Portifolio webpage
-Using Flexbox for Components + Grid for Layout
-Exercise Overview
+## Exercise Overview
 Create a single portfolio webpage that demonstrates both Flexbox and Grid by using:
 
-Flexbox for the navigation bar and card components
-Grid for the main page layout and image gallery
-1. Create Your Files
+- **Flexbox** for the navigation bar and card components
+- **Grid** for the main page layout and image gallery
+
+## 1. Create Your Files
 Create two files in a folder:
+- `index.html`
+- `style.css`
 
-index.html
-style.css
-2. HTML Structure
-Type this HTML code into your index.html:
+## 2. HTML Structure
+Type this HTML code into your `index.html`:
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,10 +108,14 @@ Type this HTML code into your index.html:
     </div>
 </body>
 </html>
-Your Tasks
-Task 1: Setup Basic Styles
-Add this starter CSS to your style.css file:
+```
 
+## Your Tasks
+
+### Task 1: Setup Basic Styles
+Add this starter CSS to your `style.css` file:
+
+```css
 * {
     margin: 0;
     padding: 0;
@@ -124,9 +129,12 @@ body {
 }
 
 /* You'll add your Flexbox and Grid styles below */
-Task 2: Navigation Bar with Flexbox
+```
+
+### Task 2: Navigation Bar with Flexbox
 Use Flexbox to create the navigation bar layout:
 
+```css
 .navbar {
     /* TODO: Make this a flex container */
     /* TODO: Space items across the navbar */
@@ -146,16 +154,19 @@ Use Flexbox to create the navigation bar layout:
     /* TODO: Make this a flex container */
     /* TODO: Add space between social links */
 }
-What you need to do:
+```
 
-Make .navbar a flex container
-Use justify-content: space-between to spread logo, menu, and social links
-Make .nav-menu and .nav-social flex containers
-Add gaps between navigation items
-Remove list bullets from the menu
-Task 3: Main Layout with Grid
+**What you need to do:**
+- Make `.navbar` a flex container
+- Use `justify-content: space-between` to spread logo, menu, and social links
+- Make `.nav-menu` and `.nav-social` flex containers
+- Add gaps between navigation items
+- Remove list bullets from the menu
+
+### Task 3: Main Layout with Grid
 Use Grid to create the main page layout:
 
+```css
 .page-container {
     /* TODO: Make this a grid container */
     /* TODO: Define grid areas for each section */
@@ -164,15 +175,18 @@ Use Grid to create the main page layout:
     margin: 0 auto;
     padding: 2rem;
 }
-What you need to do:
+```
 
-Make .page-container a grid container
-Create grid areas for: hero, about, skills, portfolio, contact
-Use grid-template-areas to define the layout
-Make each section span the full width
-Task 4: Skills Cards with Flexbox
+**What you need to do:**
+- Make `.page-container` a grid container
+- Create grid areas for: hero, about, skills, portfolio, contact
+- Use `grid-template-areas` to define the layout
+- Make each section span the full width
+
+### Task 4: Skills Cards with Flexbox
 Use Flexbox for the skills cards:
 
+```css
 .skills-container {
     /* TODO: Make this a flex container */
     /* TODO: Allow cards to wrap */
@@ -187,15 +201,18 @@ Use Flexbox for the skills cards:
     border-radius: 8px;
     text-align: center;
 }
-What you need to do:
+```
 
-Make .skills-container a flex container that wraps
-Set each .skill-card to have a minimum width but grow to fill space
-Add gaps between cards
-Make cards equal height
-Task 5: Portfolio Gallery with Grid
+**What you need to do:**
+- Make `.skills-container` a flex container that wraps
+- Set each `.skill-card` to have a minimum width but grow to fill space
+- Add gaps between cards
+- Make cards equal height
+
+### Task 5: Portfolio Gallery with Grid
 Use Grid for the project gallery:
 
+```css
 .gallery {
     /* TODO: Make this a grid container */
     /* TODO: Create responsive columns */
@@ -214,15 +231,18 @@ Use Grid for the project gallery:
     width: 100%;
     border-radius: 4px;
 }
-What you need to do:
+```
 
-Make .gallery a grid container
-Use repeat(auto-fit, minmax(280px, 1fr)) for responsive columns
-Add grid gaps
-Make sure images fit properly in their containers
-Task 6: Make it Responsive
+**What you need to do:**
+- Make `.gallery` a grid container
+- Use `repeat(auto-fit, minmax(280px, 1fr))` for responsive columns
+- Add grid gaps
+- Make sure images fit properly in their containers
+
+### Task 6: Make it Responsive
 Add responsive behavior for mobile devices:
 
+```css
 @media (max-width: 768px) {
     .navbar {
         /* TODO: Stack navbar items vertically */
@@ -236,15 +256,19 @@ Add responsive behavior for mobile devices:
         /* TODO: Adjust grid columns for mobile */
     }
 }
-Expected Results
-Desktop View:
-Navigation bar with logo on left, menu in center, social links on right
-Hero section spanning full width
-Skills cards in a row (3 across)
-Portfolio gallery in a responsive grid (2-3 columns)
-All sections properly spaced
-Mobile View:
-Navigation stacked vertically or hamburger menu
-Skills cards stacked in single column
-Portfolio projects in single column
-Everything remains readable and accessible
+```
+
+## Expected Results
+
+### Desktop View:
+- Navigation bar with logo on left, menu in center, social links on right
+- Hero section spanning full width
+- Skills cards in a row (3 across)
+- Portfolio gallery in a responsive grid (2-3 columns)
+- All sections properly spaced
+
+### Mobile View:
+- Navigation stacked vertically or hamburger menu
+- Skills cards stacked in single column
+- Portfolio projects in single column
+- Everything remains readable and accessible

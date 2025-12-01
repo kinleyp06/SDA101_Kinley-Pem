@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Practice Exercises</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .exercise {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        h2 {
+            color: #2575fc;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            color: #6a11cb;
+        }
+        
+        /* Exercise 1: Job Listings Table */
+        .job-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .job-table th {
+            background-color: #2575fc;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .job-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .job-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .job-table tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .deadline {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        
+        /* Exercise 2: Photo Gallery Grid */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .photo-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 200px;
+        }
+        
+        .photo-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Exercise 3: College Navigation Bar */
+        .navbar {
+            background-color: #1a237e;
+            padding: 0 30px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .college-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 20px 15px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: #3949ab;
+        }
+        
+        .nav-links .active {
+            background-color: #3949ab;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .navbar {
+                padding: 15px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .job-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Web Design Practice Exercises</h1>
+            <p class="subtitle">First-year student exercises for learning HTML & CSS</p>
+        </header>
+        
+        <!-- Exercise 1: Job Listings Table -->
+        <section class="exercise">
+            <h2><i class="fas fa-table"></i> Job Listings Table</h2>
+            <p>A table displaying job listings with columns for Job Title, Company, Location, and Application Deadline.</p>
+            
+            <table class="job-table">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>Location</th>
+                        <th>Application Deadline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frontend Developer</td>
+                        <td>Tech Solutions Inc.</td>
+                        <td>New York, NY</td>
+                        <td class="deadline">June 15, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>Web Designer</td>
+                        <td>Creative Minds Agency</td>
+                        <td>Los Angeles, CA</td>
+                        <td class="deadline">July 1, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>UX/UI Designer</td>
+                        <td>Digital Innovations LLC</td>
+                        <td>Remote</td>
+                        <td class="deadline">June 30, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>Junior Web Developer</td>
+                        <td>StartUp Ventures</td>
+                        <td>Austin, TX</td>
+                        <td class="deadline">July 10, 2023</td>
+                    </tr>
+                    <tr>
+                        <td>Graphic Designer</td>
+                        <td>Artistic Creations Co.</td>
+                        <td>Chicago, IL</td>
+                        <td class="deadline">June 25, 2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Exercise 2: Photo Gallery Grid -->
+        <section class="exercise">
+            <h2><i class="fas fa-images"></i> Simple Photo Gallery</h2>
+            <p>A responsive photo gallery using CSS Grid display with hover effects.</p>
+            
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Mountain landscape">
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Forest path">
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Lake view">
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1" alt="Beach sunset">
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" alt="Aerial view of mountains">
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000" alt="Lake mountains">
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Foggy mountains">
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b" alt="Autumn forest">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Exercise 3: College Navigation Bar -->
+        <section class="exercise">
+            <h2><i class="fas fa-university"></i> College Website Navigation Bar</h2>
+            <p>A responsive navigation bar for a college website using Flexbox layout.</p>
+            
+            <nav class="navbar">
+                <div class="college-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>University Central</span>
+                </div>
+                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Academics</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Campus Life</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div style="margin-top: 20px; padding: 15px; background-color: #f0f7ff; border-radius: 5px;">
+                <p><strong>Note:</strong> This is a functional navigation bar using Flexbox. Try clicking on the menu items or resize your browser to see the mobile menu toggle.</p>
+            </div>
+        </section>
+        
+        <div class="footer">
+            <p>Web Design Practice Exercises &bull; Created by a First-Year Student &bull; All code in one HTML file</p>
+            <p style="margin-top: 5px;">Images from Unsplash | Icons from Font Awesome</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.getElementById('navLinks');
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    const icon = document.querySelector('#mobileToggle i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+                
+                // Update active class
+                document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
